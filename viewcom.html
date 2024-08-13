@@ -1,0 +1,55 @@
+{% include 'header.html' %}
+<br>
+<br> 
+<br>
+<br>
+<center>
+  <section class="contact_section  long_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+                View Complaint
+              </h2>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">slno</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Description</th>
+                     
+                        
+                        
+                        
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for i in result %}
+                    <tr>
+                        <td></strong>{{forloop.counter}}</td>
+                        <td></strong>{{i.user_id}}</td>
+                        <td></strong>{{i.location}}</td>
+                        <td>{{i.description}}</strong></td>
+                       
+        
+                        
+        
+                        
+                        
+        
+        
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </Center>
+        
+                </div>
+                {% include 'footer.html' %}    

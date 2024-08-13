@@ -1,0 +1,84 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+ <head>
+        <meta http-equiv="refresh" content="5">
+        </head>
+
+<!--/ Intro Single star /-->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">Result</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Intro Single End /-->
+
+<!--/ Contact Star /-->
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 section-t8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <form action="web_cam" method="post">
+                            {% csrf_token %}
+
+                            <div class="btn_box">
+                                <button type="submit" class="btn btn-success">
+                                    Test
+                                </button>
+                            </div>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Contact End /-->
+
+<!-- Display Street Light Statuses -->
+<h2>Street Light 1: <span id="led1Status">{{led1}}</span></h2>
+<h2>Street Light 2: <span id="led2Status">{{led2}}</span></h2>
+
+{% include 'footer.html' %}
+
+<script>
+    // JavaScript code to update LED statuses
+    // Assuming led1 and led2 are variables containing the status (0 or 1) of the LEDs
+
+    // Get the status of LED 1
+    var led1 = {{led1}};
+
+    // Get the status of LED 2
+    var led2 = {{led2}};
+
+    // Function to update LED status display
+    function updateLEDStatus() {
+        // Update LED 1 status display
+        if (led1 === 0) {
+            document.getElementById('led1Status').textContent = 'Working';
+        } else if (led1 === 1) {
+            document.getElementById('led1Status').textContent = 'Damaged';
+        }
+
+        // Update LED 2 status display
+        if (led2 === 0) {
+            document.getElementById('led2Status').textContent = 'Working';
+        } else if (led2 === 1) {
+            document.getElementById('led2Status').textContent = 'Damaged';
+        }
+    }
+
+    // Call the function to update LED status initially
+    updateLEDStatus();
+</script>
+
+{% endblock %}

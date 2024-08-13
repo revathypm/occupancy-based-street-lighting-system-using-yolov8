@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+       
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    
+                </div>
+                
+                
+                        <h6 class="mb-0"></h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center position-relative" style="margin-top: -200px; z-index: 1;">
+                <div class="col-lg-8">
+                    <div class="bg-white rounded p-5 m-5 mb-0">
+                        <form action="addupload" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                               
+                                
+                                
+                                <div class="col-12">
+                                    <input type="file" class="form-control bg-light border-0" name="file" placeholder="image" style="height: 55px;">
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <H2>
+                        {{result}}
+                    </H2>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
